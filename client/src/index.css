@@ -1,0 +1,176 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-body bg-zinc-950 text-zinc-200 antialiased;
+    font-feature-settings: 'kern' 1, 'liga' 1;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-medium
+           transition-all duration-150 focus:outline-none focus:ring-2 focus:ring-offset-0
+           disabled:opacity-50 disabled:cursor-not-allowed select-none active:scale-[0.98];
+  }
+  .btn-primary {
+    @apply btn bg-amber-400 text-black hover:bg-amber-300 focus:ring-amber-400/40;
+  }
+  .btn-secondary {
+    @apply btn bg-zinc-800 text-zinc-200 border border-zinc-700 hover:bg-zinc-700 focus:ring-zinc-600;
+  }
+  .btn-ghost {
+    @apply btn bg-transparent text-zinc-400 hover:bg-zinc-800 hover:text-zinc-200 focus:ring-zinc-700;
+  }
+  .btn-danger {
+    @apply btn bg-red-600 text-white hover:bg-red-500 focus:ring-red-500/40;
+  }
+  .input {
+    @apply w-full bg-zinc-800 border border-zinc-700 rounded-xl px-4 py-2.5 text-sm text-zinc-200
+           placeholder:text-zinc-600 focus:outline-none focus:ring-2 focus:border-amber-500/50
+           focus:ring-amber-500/10 transition-all duration-150;
+  }
+  .label {
+    @apply block text-xs font-medium text-zinc-500 mb-1.5;
+  }
+  .card {
+    @apply bg-zinc-900 border border-zinc-800 rounded-2xl;
+  }
+}
+
+/* ─── Quill dark theme overrides ─────────────────────────────────────────── */
+
+.ql-toolbar.ql-snow {
+  background: #18181b !important;
+  border: none !important;
+  border-bottom: 1px solid #27272a !important;
+  padding: 10px 24px !important;
+  font-family: 'DM Sans', sans-serif !important;
+}
+
+.ql-container.ql-snow {
+  border: none !important;
+  background: transparent !important;
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: 15px !important;
+}
+
+.ql-editor {
+  min-height: 420px !important;
+  padding: 24px 32px !important;
+  color: #d4d4d8 !important;
+  line-height: 1.8 !important;
+  caret-color: #fbbf24;
+}
+
+.ql-editor.ql-blank::before {
+  color: #3f3f46 !important;
+  font-style: normal !important;
+  font-size: 15px !important;
+}
+
+.ql-editor p { margin-bottom: 12px !important; }
+
+.ql-editor h1 {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: 2rem !important;
+  font-weight: 700 !important;
+  color: #fafafa !important;
+  margin-bottom: 16px !important;
+  margin-top: 24px !important;
+}
+
+.ql-editor h2 {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: 1.5rem !important;
+  font-weight: 600 !important;
+  color: #f4f4f5 !important;
+  margin-bottom: 12px !important;
+  margin-top: 20px !important;
+}
+
+.ql-editor h3 {
+  font-size: 1.2rem !important;
+  font-weight: 600 !important;
+  color: #e4e4e7 !important;
+  margin-bottom: 8px !important;
+  margin-top: 16px !important;
+}
+
+.ql-editor blockquote {
+  border-left: 3px solid #fbbf24 !important;
+  background: #fbbf2408 !important;
+  padding: 8px 16px !important;
+  margin: 16px 0 !important;
+  border-radius: 0 8px 8px 0 !important;
+  color: #a1a1aa !important;
+  font-style: italic !important;
+}
+
+.ql-editor code {
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 13px !important;
+  background: #27272a !important;
+  color: #fbbf24 !important;
+  padding: 2px 6px !important;
+  border-radius: 4px !important;
+  border: 1px solid #3f3f46 !important;
+}
+
+.ql-editor pre.ql-syntax {
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 13px !important;
+  background: #09090b !important;
+  color: #a3e635 !important;
+  border: 1px solid #27272a !important;
+  padding: 16px !important;
+  border-radius: 10px !important;
+  margin: 16px 0 !important;
+  overflow-x: auto !important;
+}
+
+.ql-editor ul, .ql-editor ol {
+  padding-left: 20px !important;
+  margin-bottom: 12px !important;
+}
+
+.ql-editor li { margin-bottom: 4px !important; }
+
+/* Toolbar icon colors */
+.ql-snow .ql-stroke { stroke: #71717a !important; }
+.ql-snow .ql-fill,
+.ql-snow .ql-stroke.ql-fill { fill: #71717a !important; }
+.ql-snow button:hover .ql-stroke,
+.ql-snow .ql-picker-label:hover .ql-stroke { stroke: #e4e4e7 !important; }
+.ql-snow button:hover .ql-fill,
+.ql-snow .ql-picker-label:hover .ql-fill { fill: #e4e4e7 !important; }
+.ql-snow button.ql-active .ql-stroke { stroke: #fbbf24 !important; }
+.ql-snow button.ql-active .ql-fill { fill: #fbbf24 !important; }
+
+/* Toolbar dropdowns */
+.ql-snow .ql-picker-label { color: #71717a !important; }
+.ql-snow .ql-picker-options {
+  background: #18181b !important;
+  border: 1px solid #27272a !important;
+  border-radius: 8px !important;
+  box-shadow: 0 8px 24px rgba(0,0,0,.4) !important;
+}
+.ql-snow .ql-picker-item { color: #a1a1aa !important; }
+.ql-snow .ql-picker-item:hover { color: #fbbf24 !important; background: #27272a !important; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #3f3f46; border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: #52525b; }
+
+/* Animations */
+@keyframes fadeIn  { from { opacity: 0 } to { opacity: 1 } }
+@keyframes slideUp { from { transform: translateY(8px); opacity: 0 } to { transform: translateY(0); opacity: 1 } }
+@keyframes slideInRight { from { transform: translateX(12px); opacity: 0 } to { transform: translateX(0); opacity: 1 } }
+
+.animate-fade-in      { animation: fadeIn 0.25s ease-out; }
+.animate-slide-up     { animation: slideUp 0.3s ease-out; }
+.animate-slide-in-right { animation: slideInRight 0.2s ease-out; }
